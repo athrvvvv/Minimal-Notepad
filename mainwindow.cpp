@@ -107,6 +107,13 @@ void MainWindow::wrap_text(){
         ui->textEdit->setLineWrapMode(QTextEdit::NoWrap);
         ui->textEdit->setPlainText(text);
     }
+    else if (ui->actionWord_wrap->isChecked() == true){
+        QString text = ui->textEdit->toPlainText();
+        ui->textEdit->setLineWrapMode(  QTextEdit::FixedColumnWidth);
+        ui->textEdit->setLineWrapColumnOrWidth(100);
+        ui->textEdit->setPlainText(text);
+
+    }
     save_settings();
 }
 
