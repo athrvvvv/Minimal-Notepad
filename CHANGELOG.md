@@ -20,5 +20,3 @@ and this project adheres to [Minimal-Notepad](https://github.com/athrvvvv/Minima
 
 [Unreleased]: https://github.com/athrvvvv/Minimal-Notepad
 [1.0.0]: https://github.com/athrvvvv/Minimal-Notepad/release/v1.0.0
-// [Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.0.0...HEAD
-// [1.0.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.3.0...v1.0.0
