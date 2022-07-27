@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionDark_mode, &QAction::toggled, [=]{
         enable_dark_mode();
     });
+    switch_max_normal();
 }
 
 MainWindow::~MainWindow()
@@ -233,5 +234,14 @@ void MainWindow::on_actionBold_triggered()
         sFullString.replace(pos, str.length(), str1);
 
         ui->textEdit->setText(sFullString);
+}
+
+void MainWindow::switch_max_normal(){
+    if(isMaximized()){
+        showNormal();
+    }
+    else{
+        showMaximized();
+    }
 }
 

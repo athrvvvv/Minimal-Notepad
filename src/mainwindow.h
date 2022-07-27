@@ -37,6 +37,8 @@ private slots:
 
     void on_actionBold_triggered();
 
+    void switch_max_normal();
+
 private:
     Ui::MainWindow *ui;
     QString file_path_;
