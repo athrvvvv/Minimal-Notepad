@@ -1,0 +1,5 @@
+src/release
+src/.qmake.stash
+src/Makefile
+src/Makefile.Debug
+src/Makefile.Release
