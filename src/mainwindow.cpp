@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Minimal-Notepad");
     load_settings();
     this->setCentralWidget(ui->textEdit);
     connect(ui->actionWord_wrap, &QAction::toggled, [=]{
@@ -122,11 +123,7 @@ void MainWindow::wrap_text(){
 void MainWindow::enable_dark_mode(){
     if (ui->actionDark_mode->isChecked() == true){
         qDebug() << "ENABLE DARK MODE TRUE";
-        QString program_dir("");
-        program_dir = qApp->applicationDirPath();
-        QDir D;
-        D.setCurrent(program_dir);
-        QFile f("darkstyle.qss");
+        QFile f(":/Themes/Themes/Dark-Theme.qss");
         if ( !f.exists() )
         {
            qWarning() << "Unable to set dark stylesheet, file not found";
@@ -139,11 +136,7 @@ void MainWindow::enable_dark_mode(){
         }
     }
     else if (ui->actionDark_mode->isChecked() == false) {
-        QString program_dir("");
-        program_dir = qApp->applicationDirPath();
-        QDir D;
-        D.setCurrent(program_dir);
-        QFile f("lightstyle.qss");
+        QFile f(":/Themes/Themes/Light-Theme.qss");
         if (!f.exists()){
             qWarning() << "Unable to set light stylesheet, file not found";
         }
