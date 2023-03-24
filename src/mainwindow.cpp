@@ -15,6 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // Set the main window as the central widget
+    setCentralWidget(new QWidget(this));
+
+    // Add the menubar to the main window
+    setMenuBar(ui->menubar);
     setWindowTitle("Minimal-Notepad");
     load_settings();
     this->setCentralWidget(ui->textEdit);
@@ -236,5 +241,30 @@ void MainWindow::switch_max_normal(){
     else{
         showMaximized();
     }
+}
+
+
+void MainWindow::on_actionDecrease_Size_triggered()
+{
+    QTextCursor cursor = ui->textEdit->textCursor();
+    QTextCharFormat format = cursor.charFormat();
+
+    // Get the current font size
+    int fontSize = format.fontPointSize();
+    // Decrease the font size by 1 point
+    fontSize -= 1;
+
+        // Set the new font size
+    format.setFontPointSize(fontSize);
+
+        // Merge the updated format back into the cursor and text edit widget
+    cursor.mergeCharFormat(format);
+    ui->textEdit->mergeCurrentCharFormat(format);
+}
+
+
+void MainWindow::on_actionIncrease_Size_triggered()
+{
+    ui->textEdit->setText("GONNA DEVELOP");
 }
 

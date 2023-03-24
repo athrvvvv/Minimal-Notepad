@@ -31,12 +31,15 @@ public:
     QAction *actionWord_wrap;
     QAction *actionDark_mode;
     QAction *actionBold;
+    QAction *actionIncrease_Size;
+    QAction *actionDecrease_Size;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QTextEdit *textEdit;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuPreference;
+    QMenu *menuFont;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -60,6 +63,10 @@ public:
         actionDark_mode->setCheckable(true);
         actionBold = new QAction(MainWindow);
         actionBold->setObjectName(QString::fromUtf8("actionBold"));
+        actionIncrease_Size = new QAction(MainWindow);
+        actionIncrease_Size->setObjectName(QString::fromUtf8("actionIncrease_Size"));
+        actionDecrease_Size = new QAction(MainWindow);
+        actionDecrease_Size->setObjectName(QString::fromUtf8("actionDecrease_Size"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -77,16 +84,19 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 723, 21));
+        menubar->setGeometry(QRect(0, 0, 723, 22));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuFile->setSeparatorsCollapsible(false);
         menuPreference = new QMenu(menubar);
         menuPreference->setObjectName(QString::fromUtf8("menuPreference"));
+        menuFont = new QMenu(menubar);
+        menuFont->setObjectName(QString::fromUtf8("menuFont"));
         MainWindow->setMenuBar(menubar);
 
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuPreference->menuAction());
+        menubar->addAction(menuFont->menuAction());
         menuFile->addAction(actionNew);
         menuFile->addAction(actionOpen);
         menuFile->addAction(actionSave);
@@ -94,6 +104,8 @@ public:
         menuFile->addAction(actionBold);
         menuPreference->addAction(actionWord_wrap);
         menuPreference->addAction(actionDark_mode);
+        menuFont->addAction(actionIncrease_Size);
+        menuFont->addAction(actionDecrease_Size);
 
         retranslateUi(MainWindow);
 
@@ -131,8 +143,17 @@ public:
 #if QT_CONFIG(shortcut)
         actionBold->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+B", nullptr));
 #endif // QT_CONFIG(shortcut)
+        actionIncrease_Size->setText(QCoreApplication::translate("MainWindow", "Increase Size", nullptr));
+#if QT_CONFIG(shortcut)
+        actionIncrease_Size->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl++", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionDecrease_Size->setText(QCoreApplication::translate("MainWindow", "Decrease Size", nullptr));
+#if QT_CONFIG(shortcut)
+        actionDecrease_Size->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+-", nullptr));
+#endif // QT_CONFIG(shortcut)
         menuFile->setTitle(QCoreApplication::translate("MainWindow", " File", nullptr));
         menuPreference->setTitle(QCoreApplication::translate("MainWindow", "Preference", nullptr));
+        menuFont->setTitle(QCoreApplication::translate("MainWindow", "Font", nullptr));
     } // retranslateUi
 
 };

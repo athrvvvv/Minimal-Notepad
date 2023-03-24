@@ -36,7 +36,7 @@
      <x>0</x>
      <y>0</y>
      <width>723</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -59,8 +59,16 @@
     <addaction name="actionWord_wrap"/>
     <addaction name="actionDark_mode"/>
    </widget>
+   <widget class="QMenu" name="menuFont">
+    <property name="title">
+     <string>Font</string>
+    </property>
+    <addaction name="actionIncrease_Size"/>
+    <addaction name="actionDecrease_Size"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuPreference"/>
+   <addaction name="menuFont"/>
   </widget>
   <action name="actionNew">
    <property name="text">
@@ -125,6 +133,22 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionIncrease_Size">
+   <property name="text">
+    <string>Increase Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionDecrease_Size">
+   <property name="text">
+    <string>Decrease Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
    </property>
   </action>
  </widget>

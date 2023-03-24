@@ -39,6 +39,10 @@ private slots:
 
     void switch_max_normal();
 
+    void on_actionDecrease_Size_triggered();
+
+    void on_actionIncrease_Size_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString file_path_;
