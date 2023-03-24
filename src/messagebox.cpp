@@ -12,6 +12,6 @@ void showNewVersionMessageBox() {
     int ret = msgBox.exec();
 
     if (ret == QMessageBox::Ok) {
-        QDesktopServices::openUrl(QUrl("https://github.com/athrvvvv/Marks-Calculator/releases/"));
+        QDesktopServices::openUrl(QUrl("https://github.com/athrvvvv/Minimal-Notepad/releases/"));
     }
 }

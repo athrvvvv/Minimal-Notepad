@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QFont>
 #include <QClipboard>
+
 using namespace std;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Add the menubar to the main window
     setMenuBar(ui->menubar);
-    setWindowTitle("Minimal-Notepad");
+    setWindowTitle("Minimal Notepad");
     load_settings();
     this->setCentralWidget(ui->textEdit);
     connect(ui->actionWord_wrap, &QAction::toggled, [=]{
@@ -217,9 +218,6 @@ void MainWindow::load_settings(){
 
 void MainWindow::on_actionBold_triggered()
 {
-//    QFont font = ui->textEdit->font();
-//    font.setWeight(QFont::Bold); // or
-//    ui->textEdit->setFont(font);
         ui->textEdit->copy();
         QClipboard* pClip = QApplication::clipboard();
         QString str = pClip->text(QClipboard::Clipboard);
@@ -246,20 +244,7 @@ void MainWindow::switch_max_normal(){
 
 void MainWindow::on_actionDecrease_Size_triggered()
 {
-    QTextCursor cursor = ui->textEdit->textCursor();
-    QTextCharFormat format = cursor.charFormat();
-
-    // Get the current font size
-    int fontSize = format.fontPointSize();
-    // Decrease the font size by 1 point
-    fontSize -= 1;
-
-        // Set the new font size
-    format.setFontPointSize(fontSize);
-
-        // Merge the updated format back into the cursor and text edit widget
-    cursor.mergeCharFormat(format);
-    ui->textEdit->mergeCurrentCharFormat(format);
+    ui->textEdit->setText("GONNA DEVELOP");
 }
 
 
