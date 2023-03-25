@@ -1,5 +1,6 @@
 body {
   background-color: #181818;
+  color: white;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -43,3 +44,9 @@ footer {
   text-align: center;
 }
 
+img {
+  max-width: 50%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
